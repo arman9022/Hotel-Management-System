@@ -32,8 +32,8 @@
 
     <section class="py-4">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-md-0 mb-3">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
             <div class="card p-4">
               <h5>Your Order</h5> 
               <hr>
@@ -79,53 +79,16 @@
                   </tbody>
                 </table>
               </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card p-4">
-              <h5>Billing Details</h5> 
-              <hr>
-              <form action="">
-                <div class="row">
-                  <div class="col-md-12 pb-3">
-                    <label for="">Email:</label>
-                    <input type="email" name="" id="" class="form-control my-2" required>
-                  </div>
-                  <div class="col-md-12 pb-3">
-                    <label for="">Mobile:</label>
-                    <input type="text" name="" id="" class="form-control my-2" required>
-                  </div>
-                  <div class="col-md-12 pb-3">
-                    <div class="form-check pb-3 align-items-center d-flex">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        <!-- bKash  -->
-                        <img src="./frontend/img/bkash.png" class="paymentRadio" alt="image">
-                      </label>
-                      <span class="ps-5">Personal Number: 01632 109022</span>
-                    </div>
-                    <div class="form-check align-items-center d-flex">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        <!-- Nagad  -->
-                        <img src="./frontend/img/nagad.png" class="paymentRadio" alt="image">
-                      </label>
-                      <span class="ps-5">Agent Number: 01632 109022</span>
-                    </div>
-                  </div>
-                  <div class="col-md-12 pb-3">
-                    <label for="">Transaction ID:</label>
-                    <input type="password" name="" id="" class="form-control my-2" required>
-                  </div>
-                  <div class="col-md-12 text-start">
-                    <a  class="btn btn-primary px-5">Place Order</a>
-                    <a href="./index.html" class="btn btn-secondary">
-                      <i class="bi bi-arrow-left pe-1"></i>
-                      Go to back
-                    </a>
-                  </div>
-                </div>
-              </form>
+              <div class="justify-content-between d-flex">
+                <a href="./index.html" class="btn btn-secondary">
+                  <i class="bi bi-arrow-left pe-1"></i>
+                  Go to back
+                </a>
+                <a href="./checkout.html" class="btn btn-primary px-5">
+                  Proceed to Checkout
+                  <i class="bi bi-arrow-right ps-1"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

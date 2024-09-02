@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+  font-family: "Nunito", sans-serif;
+}
+.nav-item.dropdown:hover .dropdown-menu { display: block; }
+a{ text-decoration: none; }
+.form-select:focus { border-color: #86b7fe; outline: 0; box-shadow: none; }
+.form-control:focus { border-color: #86b7fe; outline: 0; box-shadow: none; }
+.dropdown-item {
+  color: var(--bs-nav-link-color);
+}
+.dropdown-item.active, .dropdown-item:active {
+  background-color: var(--bs-dropdown-link-hover-bg);
+}
+.fs-12{ font-size: 12px; }
