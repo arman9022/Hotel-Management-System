@@ -25,3 +25,13 @@ a{ text-decoration: none; }
   margin-left: 10px;
   cursor: pointer;
 }
+.accordion-button:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: white;
+  box-shadow: none;
+}

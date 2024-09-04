@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- custom css -->
     <link rel="stylesheet" href="./frontend/css/style.css">
+    <!-- Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   </head>
   <body>
@@ -30,14 +32,45 @@
       </div>
     </nav>
 
-    <section class="py-5">
+    <section id="SearchRooms" class="py-5">
       <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-md-12">
-            <div class="card p-3">
+            <h1 class="text-center pb-3">Check & select your preferred room.</h1>
+          </div>
+          <div class="col-md-5">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner rounded">
+                <div class="carousel-item active" data-bs-interval="5000">
+                  <img class="d-block w-100" src="https://tools.vakantiediscounter.nl/tools/content/images/accommodations/1d734b0a-4fed-4a7b-a579-f8ef981a3a1e/970/3.jpg?width=1920" alt="image">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                  <img class="d-block w-100" src="https://tools.vakantiediscounter.nl/tools/content/images/accommodations/1d734b0a-4fed-4a7b-a579-f8ef981a3a1e/970/3.jpg?width=1920" alt="image">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                  <img class="d-block w-100" src="https://tools.vakantiediscounter.nl/tools/content/images/accommodations/1d734b0a-4fed-4a7b-a579-f8ef981a3a1e/970/3.jpg?width=1920" alt="image">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="card p-4">
               <form action="">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-12 pb-3">
                     <label for="">Date:</label>
                     <div class="row">
                       <div class="col-md-6">
@@ -54,15 +87,15 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3 mt-md-0 mt-3">
+                  <!-- <div class="col-md-6 mt-md-3 mt-3">
                     <label for="">Person:</label>
                     <input type="number" value="2" class="form-control" required>
                   </div>
-                  <div class="col-md-3 mt-md-0 mt-3">
+                  <div class="col-md-6 mt-md-3 mt-3">
                     <label for="">Room:</label>
                     <input type="number" value="1" class="form-control" required>
-                  </div>
-                  <div class="col-12 pt-3 text-center">
+                  </div> -->
+                  <div class="col-12 text-center">
                     <a href="./roomSearch.html" class="btn btn-primary px-5">
                       <i class="bi bi-search pe-1"></i>
                       Search Now
@@ -75,7 +108,7 @@
         </div>
       </div>
     </section>
-    <section class="py-5" style="background: rgb(245, 216, 177);">
+    <section id="Rooms" class="py-5" style="background: rgb(245, 216, 177);">
       <div class="container">
         <div class="row justify-content-around">
           <div class="col-12 fs-3 fw-bold">
@@ -83,124 +116,346 @@
           </div>
           <hr>
 
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class="card-img-top" alt="image">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
-                <div class="d-flex justify-content-between align-items-center">
-                  <h5 class="card-title">Room 1</h5>
-                  <div class="fs-5 px-2 py-0">
-                    <i class="bi bi-person-check-fill"></i>
-                    <span class="bg-dark text-white rounded px-2">4</span> 
+          <div class="col-md-12">
+            <div class="swiper roomSwiper mb-4 px-5">
+              <div class="swiper-wrapper mb-5">
+
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <h5 class="card-title">Room1</h5>
+                      </div>
+                      <div class="text-center mb-2">
+                        <span class="badge text-bg-primary">Room Capacity - Adults: 2 | Kids: 2</span>
+                      </div>
+                      <div class="accordion accordion-flush" id="accordionFlushExample1">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1" aria-expanded="false" aria-controls="flush-collapseOne1">
+                              Facilities
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body p-0">
+<pre class="mb-0">
+  <i class="bi bi-check"></i>24-Hour Guest Reception
+  <i class="bi bi-check"></i>Fancy Bathrobes
+  <i class="bi bi-check"></i>Flexible Checkout
+  <i class="bi bi-check"></i>Free Breakfast
+  <i class="bi bi-check"></i>Free Wifi
+  <i class="bi bi-check"></i>Mini-fridge
+  <i class="bi bi-check"></i>Parking
+  <i class="bi bi-check"></i>Premium Bedding
+  <i class="bi bi-check"></i>Room Service
+</pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>999 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">699 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Book Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <!-- <span class="card-text d-block">Short Description</span> -->
-                <!-- <span class="card-text">Description</span> -->
-<pre>
-one seeling fan
-attached washroom
-two light
-1 pair of table chair
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <h5 class="card-title">Room2</h5>
+                      </div>
+                      <div class="text-center mb-2">
+                        <span class="badge text-bg-primary">Room Capacity - Adults: 2 | Kids: 2</span>
+                      </div>
+                      <div class="accordion accordion-flush" id="accordionFlushExample2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne2" aria-expanded="false" aria-controls="flush-collapseOne2">
+                              Facilities
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body p-0">
+<pre class="mb-0">
+  <i class="bi bi-check"></i>24-Hour Guest Reception
+  <i class="bi bi-check"></i>Fancy Bathrobes
+  <i class="bi bi-check"></i>Flexible Checkout
+  <i class="bi bi-check"></i>Free Breakfast
+  <i class="bi bi-check"></i>Free Wifi
+  <i class="bi bi-check"></i>Mini-fridge
+  <i class="bi bi-check"></i>Parking
+  <i class="bi bi-check"></i>Premium Bedding
+  <i class="bi bi-check"></i>Room Service
 </pre>
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="./checkout.html" class="btn btn-primary">Book Now</a>
-                  <span class="fs-5 text-danger"> 
-                    <del>999 tk</del> 
-                  </span>
-                  <span class="fw-bold fs-3">699 tk</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class="card-img-top" alt="image">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
-                <div class="d-flex justify-content-between align-items-center">
-                  <h5 class="card-title">Room 2</h5>
-                  <div class="fs-5 px-2 py-0">
-                    <i class="bi bi-person-check-fill"></i>
-                    <span class="bg-dark text-white rounded px-2">4</span> 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>999 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">699 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Book Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <!-- <span class="card-text d-block">Short Description</span> -->
-                <!-- <span class="card-text">Description</span> -->
-<pre>
-one seeling fan
-attached washroom
-two light
-1 pair of table chair
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <h5 class="card-title">Room3</h5>
+                      </div>
+                      <div class="text-center mb-2">
+                        <span class="badge text-bg-primary">Room Capacity - Adults: 2 | Kids: 2</span>
+                      </div>
+                      <div class="accordion accordion-flush" id="accordionFlushExample3">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne3" aria-expanded="false" aria-controls="flush-collapseOne3">
+                              Facilities
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body p-0">
+<pre class="mb-0">
+  <i class="bi bi-check"></i>24-Hour Guest Reception
+  <i class="bi bi-check"></i>Fancy Bathrobes
+  <i class="bi bi-check"></i>Flexible Checkout
+  <i class="bi bi-check"></i>Free Breakfast
+  <i class="bi bi-check"></i>Free Wifi
+  <i class="bi bi-check"></i>Mini-fridge
+  <i class="bi bi-check"></i>Parking
+  <i class="bi bi-check"></i>Premium Bedding
+  <i class="bi bi-check"></i>Room Service
 </pre>
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="./checkout.html" class="btn btn-primary">Book Now</a>
-                  <span class="fs-5 text-danger"> 
-                    <del>999 tk</del> 
-                  </span>
-                  <span class="fw-bold fs-3">699 tk</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class="card-img-top" alt="image">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
-                <div class="d-flex justify-content-between align-items-center">
-                  <h5 class="card-title">Room 3</h5>
-                  <div class="fs-5 px-2 py-0">
-                    <i class="bi bi-person-check-fill"></i>
-                    <span class="bg-dark text-white rounded px-2">4</span> 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>999 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">699 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Book Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <!-- <span class="card-text d-block">Short Description</span> -->
-                <!-- <span class="card-text">Description</span> -->
-<pre>
-one seeling fan
-attached washroom
-two light
-1 pair of table chair
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <h5 class="card-title">Room4</h5>
+                      </div>
+                      <div class="text-center mb-2">
+                        <span class="badge text-bg-primary">Room Capacity - Adults: 2 | Kids: 2</span>
+                      </div>
+                      <div class="accordion accordion-flush" id="accordionFlushExample4">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne4" aria-expanded="false" aria-controls="flush-collapseOne4">
+                              Facilities
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body p-0">
+<pre class="mb-0">
+  <i class="bi bi-check"></i>24-Hour Guest Reception
+  <i class="bi bi-check"></i>Fancy Bathrobes
+  <i class="bi bi-check"></i>Flexible Checkout
+  <i class="bi bi-check"></i>Free Breakfast
+  <i class="bi bi-check"></i>Free Wifi
+  <i class="bi bi-check"></i>Mini-fridge
+  <i class="bi bi-check"></i>Parking
+  <i class="bi bi-check"></i>Premium Bedding
+  <i class="bi bi-check"></i>Room Service
 </pre>
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="./checkout.html" class="btn btn-primary">Book Now</a>
-                  <span class="fs-5 text-danger"> 
-                    <del>999 tk</del> 
-                  </span>
-                  <span class="fw-bold fs-3">699 tk</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>999 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">699 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Book Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
               </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
 
         </div>
       </div>
     </section>
-    <section class="py-5" style="background: rgb(153, 218, 248);">
+    <section id="Foods" class="py-5" style="background: rgb(153, 218, 248);">
       <div class="container">
         <div class="row">
           <div class="col-12 fs-3 fw-bold">
             Foods
           </div>
           <hr>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://static.vecteezy.com/system/resources/previews/030/634/307/large_2x/chinese-food-pu-pu-platter-with-metal-barbeque-in-free-photo.jpg" class="card-img-top" alt="image">
-              <div class="card-body">
-                <h5 class="card-title">Food 1</h5>
-                <p class="card-text">Short Description</p>
-                
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="./cart.html" class="btn btn-primary">Add To Cart</a>
-                  <span class="fs-5 text-danger"> 
-                    <del>350 tk</del> 
-                  </span>
-                  <span class="fw-bold fs-3">320 tk</span>
+          <div class="col-12">
+            <div class="swiper foodSwiper mb-4 px-5">
+              <div class="swiper-wrapper mb-5">
+
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/030/634/307/large_2x/chinese-food-pu-pu-platter-with-metal-barbeque-in-free-photo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title">FoodName1</h5>
+                      <p class="card-text mb-0">ShortDescription</p>
+                      <p class="card-text mb-1">Description</p>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>350 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">320 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Order Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/030/634/307/large_2x/chinese-food-pu-pu-platter-with-metal-barbeque-in-free-photo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title">FoodName2</h5>
+                      <p class="card-text mb-0">ShortDescription</p>
+                      <p class="card-text mb-1">Description</p>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>350 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">320 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Order Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/030/634/307/large_2x/chinese-food-pu-pu-platter-with-metal-barbeque-in-free-photo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title">FoodName3</h5>
+                      <p class="card-text mb-0">ShortDescription</p>
+                      <p class="card-text mb-1">Description</p>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>350 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">320 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Order Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/030/634/307/large_2x/chinese-food-pu-pu-platter-with-metal-barbeque-in-free-photo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title">FoodName4</h5>
+                      <p class="card-text mb-0">ShortDescription</p>
+                      <p class="card-text mb-1">Description</p>
+
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>350 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">320 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Order Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/030/634/307/large_2x/chinese-food-pu-pu-platter-with-metal-barbeque-in-free-photo.jpg" class="card-img-top" alt="image">
+                    <div class="card-body">
+                      <h5 class="card-title">FoodName5</h5>
+                      <p class="card-text mb-0">ShortDescription</p>
+                      <p class="card-text mb-1">Description</p>
+ 
+                      <div class="d-flex justify-content-center align-items-center">
+                        <span class="fs-5 text-danger"> 
+                          <del>350 tk</del> 
+                        </span>
+                        <span class="fw-bold fs-3">320 tk</span>
+                      </div>
+                      <div class="d-flex justify-content-around align-items-center">
+                        <a href="./checkout.html" class="btn btn-success">Order Now</a>
+                        <a href="./cart.html" class="btn btn-primary">Add to Cart</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
               </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -214,5 +469,58 @@ two light
 
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".foodSwiper", {
+        loop: false,
+        speed: 1000,
+        autoplay: { delay: 5000, },
+        autoplay: false,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+      var swiper = new Swiper(".roomSwiper", {
+        loop: false,
+        speed: 1000,
+        autoplay: { delay: 5000, },
+        autoplay: false,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
+
+
   </body>
 </html>
